@@ -40,7 +40,7 @@ Only need to install this mod on the server side.
   - If the `damage reduction amount` exceeds this value, it will be capped at this limit.
   - For example: If set to 10.0, the player's incoming damage will be limited to a maximum reduction of 10 points.
 - SATIATED_SHIELD_MIN_DAMAGE
-  - The minimum damage that can be caused by the Satiated Shield effect.
+  - The minimum damage that can be got in the Satiated Shield effect.
   - When the `original damage` is higher than this value, the `final damage` will be limited to not be lower than this value.
   - `final damage` = `original damage` - `damage reduction amount`
 - SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER

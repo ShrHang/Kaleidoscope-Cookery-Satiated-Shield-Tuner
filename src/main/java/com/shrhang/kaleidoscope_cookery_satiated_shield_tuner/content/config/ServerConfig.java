@@ -23,7 +23,7 @@ public class ServerConfig {
                 )
                 .comment(
                         "是否启用饱腹代偿效果削弱。",
-                        "如果《森罗物语：兼容》的饱腹代偿效果削弱被启用，则优先使用它的削弱效果，且本选项无效。"
+                        "如果《森罗物语：兼容》的饱腹代偿效果削弱被启用，则优先使用它的削弱效果。且本模组的配置项无效。"
                 )
                 .define("isWeakenSatiatedShield", true);
 
@@ -45,18 +45,22 @@ public class ServerConfig {
 
         SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE = builder
                 .comment(
-                        "Additional exhaustion caused by each point of damage reduced by the Satiated Shield effect."
+                        "The additional exhaustion added each time the player takes damage.",
+                        "4 points of exhaustion = 1 point of food/hunger value, and the player can accumulate up to 40 points of exhaustion in 1 game tick.",
+                        "For example: if set to 0.5, each point of damage reduced will cause an additional 0.5 exhaustion."
                 )
                 .comment(
                         "每点被饱腹代偿效果减免的伤害额外造成的疲劳值。",
-                        "例如：如果设置为 0.5，每点被减免的伤害将额外造成 0.5 点疲劳值。",
-                        "4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。"
+                        "4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。",
+                        "例如：如果设置为 0.5，每点被减免的伤害将额外造成 0.5 点疲劳值。"
                 )
                 .defineInRange("satiatedShieldAdditionalExhaustionPerDamage", 2.0, 0.0, 40.0);
 
         SATIATED_SHIELD_DAMAGE_REDUCTION_PERCENT = builder
                 .comment(
-                        "Damage reduction percentage for the Satiated Shield effect."
+                        "The damage reduction percentage of the Satiated Shield effect.",
+                        "The <Damage Reduction Amount> is calculated by multiplying the <Original Damage> by the <Damage Reduction Percentage>.",
+                        "For example: if set to 0.85, the player will take 15% of the original damage."
                 )
                 .comment(
                         "饱腹代偿效果的<伤害减免百分比>。",
@@ -67,7 +71,9 @@ public class ServerConfig {
 
         SATIATED_SHIELD_MAX_DAMAGE_REDUCTION = builder
                 .comment(
-                        "Maximum damage reduction for the Satiated Shield effect."
+                        "The maximum damage reduction amount of the Satiated Shield effect.",
+                        "If the <Damage Reduction Amount> calculated by multiplying the <Original Damage> by the <Damage Reduction Percentage> is greater than this value, it will be limited to this value.",
+                        "For example: if set to 10.0, the damage the player takes will be limited to a maximum reduction of 10 points of damage."
                 )
                 .comment(
                         "饱腹代偿效果的<最大伤害减免量>。",
@@ -78,7 +84,9 @@ public class ServerConfig {
 
         SATIATED_SHIELD_MIN_DAMAGE = builder
                 .comment(
-                        "Minimum damage for the Satiated Shield effect."
+                        "The minimum damage that can be got in the Satiated Shield effect.",
+                        "If the <Final Damage> after damage reduction is less than this value, it will be limited to this value.",
+                        "<Final Damage> = <Original Damage> - <Damage Reduction Amount>"
                 )
                 .comment(
                         "饱腹代偿效果下可造成的最小伤害。",
@@ -89,7 +97,8 @@ public class ServerConfig {
 
         SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER = builder
                 .comment(
-                        "Multiplier applied to additional food consumption when get the Satiated Shield's weakness damage."
+                        "The multiplier for the exhaustion added per point of Satiated Shield Weakness Damage.",
+                        "4 points of exhaustion = 1 point of food/hunger value, and the player can accumulate up to 40 points of exhaustion in 1 game tick."
                 )
                 .comment(
                         "当玩家受到饱腹代偿弱点伤害时，每点伤害增加的疲劳值的乘算倍率。",
