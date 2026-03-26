@@ -45,12 +45,12 @@ public class ServerConfig {
 
         SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE = builder
                 .comment(
-                        "The additional exhaustion added each time the player takes damage.",
+                        "The exhaustion added each time the player takes damage.",
                         "4 points of exhaustion = 1 point of food/hunger value, and the player can accumulate up to 40 points of exhaustion in 1 game tick.",
                         "For example: if set to 0.5, each point of damage reduced will cause an additional 0.5 exhaustion."
                 )
                 .comment(
-                        "每点被饱腹代偿效果减免的伤害额外造成的疲劳值。",
+                        "每次受到伤害时增加的疲劳值。",
                         "4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。",
                         "例如：如果设置为 0.5，每点被减免的伤害将额外造成 0.5 点疲劳值。"
                 )

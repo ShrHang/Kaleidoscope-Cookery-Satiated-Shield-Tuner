@@ -28,7 +28,7 @@ Only need to install this mod on the server side.
   - The minimum Hunger Value required for the Satiated Shield effect to take effect.
   - When the player's hunger value is below this threshold, the Satiated Shield effect will not be active.
 - SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE
-  - The additional exhaustion added each time the player takes damage.
+  - The exhaustion added each time the player takes damage.
   - 4 points of exhaustion = 1 point of food/hunger value, and the player can accumulate up to 40 points of exhaustion in 1 game tick.
   - For example: If set to 0.5, each point of reduced damage will additionally cause 0.5 points of exhaustion.
 - SATIATED_SHIELD_DAMAGE_REDUCTION_PERCENT
