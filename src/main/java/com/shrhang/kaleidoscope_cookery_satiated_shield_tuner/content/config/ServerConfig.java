@@ -6,20 +6,25 @@ public class ServerConfig {
     private static final ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
     public static ModConfigSpec SPEC;
 
-    public static final ModConfigSpec.BooleanValue IS_WEAKEN_SATIATED_SHIELD;
+    public static final ModConfigSpec.BooleanValue IS_MODIFY_SATIATED_SHIELD;
     public static final ModConfigSpec.BooleanValue IS_SATIATED_SHIELD_DISABLE_WHEN_HUNGRY_EFFECT;
     public static final ModConfigSpec.IntValue SATIATED_SHIELD_MIN_FOOD_LEVEL;
+    public static final ModConfigSpec.DoubleValue SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE;
     public static final ModConfigSpec.DoubleValue SATIATED_SHIELD_DAMAGE_REDUCTION_PERCENT;
     public static final ModConfigSpec.DoubleValue SATIATED_SHIELD_MAX_DAMAGE_REDUCTION;
-    public static final ModConfigSpec.DoubleValue SATIATED_SHIELD_MIN_DAMAGE_REDUCTION;
+    public static final ModConfigSpec.DoubleValue SATIATED_SHIELD_MIN_DAMAGE;
     public static final ModConfigSpec.DoubleValue SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER;
 
     static {
-        IS_WEAKEN_SATIATED_SHIELD = builder
-                .comment("Whether to weaken the shield provided by satiated effect.")
-                .comment("是否启用饱腹代偿效果削弱。")
-                .comment("If the weakening of the satiated shield effect in 'Kaleidoscope Compat' is enabled, its weakening effect will be used preferentially, and this option will be invalid.")
-                .comment("如果《森罗物语：兼容》的饱腹代偿效果削弱被启用，则优先使用它的削弱效果，且本选项无效。")
+        IS_MODIFY_SATIATED_SHIELD = builder
+                .comment(
+                        "Whether to weaken the shield provided by satiated effect.",
+                        "If the Satiated Shield Weakness from the Kaleidoscope Compat mod is enabled, its effects will take precedence. And the configuration options of this mod will be disabled."
+                )
+                .comment(
+                        "是否启用饱腹代偿效果削弱。",
+                        "如果《森罗物语：兼容》的饱腹代偿效果削弱被启用，则优先使用它的削弱效果，且本选项无效。"
+                )
                 .define("isWeakenSatiatedShield", true);
 
         IS_SATIATED_SHIELD_DISABLE_WHEN_HUNGRY_EFFECT = builder
@@ -28,28 +33,68 @@ public class ServerConfig {
                 .define("satiatedShieldDisableWhenHungryEffect", true);
 
         SATIATED_SHIELD_MIN_FOOD_LEVEL = builder
-                .comment("Minimum food level required for the Satiated Shield to apply (int). If player's food level is below this, the effect will not apply.")
-                .comment("饱腹代偿生效所需的最小饱食度（整数）。当玩家饱食度低于该值时，饱腹代偿不生效。")
-                .defineInRange("satiatedShieldMinFoodLevel", 1, 1, 20);
+                .comment(
+                        "Minimum Hunger Value required for the Satiated Shield to apply (int).",
+                        "If player's Hunger Value is below this, the effect will not apply."
+                )
+                .comment(
+                        "饱腹代偿生效所需的最小饥饿值（整数）。",
+                        "当玩家饥饿值低于该值时，饱腹代偿不生效。"
+                )
+                .defineInRange("satiatedShieldMinFoodLevel", 14, 1, 20);
+
+        SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE = builder
+                .comment(
+                        "Additional exhaustion caused by each point of damage reduced by the Satiated Shield effect."
+                )
+                .comment(
+                        "每点被饱腹代偿效果减免的伤害额外造成的疲劳值。",
+                        "例如：如果设置为 0.5，每点被减免的伤害将额外造成 0.5 点疲劳值。",
+                        "4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。"
+                )
+                .defineInRange("satiatedShieldAdditionalExhaustionPerDamage", 2.0, 0.0, 40.0);
 
         SATIATED_SHIELD_DAMAGE_REDUCTION_PERCENT = builder
-                .comment("Damage reduction percentage for the Satiated Shield effect.")
-                .comment("饱腹代偿效果的伤害减免百分比。")
+                .comment(
+                        "Damage reduction percentage for the Satiated Shield effect."
+                )
+                .comment(
+                        "饱腹代偿效果的<伤害减免百分比>。",
+                        "玩家受到的<原始伤害>将乘以<伤害减免百分比>来计算<伤害减免量>。",
+                        "例如：如果设置为 0.85，玩家将受到 15% 的原始伤害。"
+                )
                 .defineInRange("satiatedShieldDamageReductionPercent", 0.85, 0.0, 1.0);
 
         SATIATED_SHIELD_MAX_DAMAGE_REDUCTION = builder
-                .comment("Maximum damage reduction for the Satiated Shield effect.")
-                .comment("饱腹代偿效果的最大伤害减免。")
+                .comment(
+                        "Maximum damage reduction for the Satiated Shield effect."
+                )
+                .comment(
+                        "饱腹代偿效果的<最大伤害减免量>。",
+                        "<伤害减免量>大于该值时，将被限制为该值。",
+                        "例如：如果设置为 10.0，玩家受到的伤害将被限制为最多减少 10 点伤害。"
+                )
                 .defineInRange("satiatedShieldMaxDamageReduction", 10.0, 0.0, Double.MAX_VALUE);
 
-        SATIATED_SHIELD_MIN_DAMAGE_REDUCTION = builder
-                .comment("Minimum damage reduction for the Satiated Shield effect.")
-                .comment("饱腹代偿效果的最小伤害减免。")
+        SATIATED_SHIELD_MIN_DAMAGE = builder
+                .comment(
+                        "Minimum damage for the Satiated Shield effect."
+                )
+                .comment(
+                        "饱腹代偿效果下可造成的最小伤害。",
+                        "<原始伤害>高于该值时，<最终伤害>将被限制为不低于该值。",
+                        "<最终伤害> = <原始伤害> - <伤害减免量>"
+                )
                 .defineInRange("satiatedShieldMinDamageReduction", 2.0, 0.0, Double.MAX_VALUE);
 
         SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER = builder
-                .comment("Multiplier applied to additional food consumption when get the Satiated Shield's weakness damage.")
-                .comment("当玩家受到由饱腹代偿弱点伤害时，增加的饱食度消耗的乘算倍率。")
+                .comment(
+                        "Multiplier applied to additional food consumption when get the Satiated Shield's weakness damage."
+                )
+                .comment(
+                        "当玩家受到饱腹代偿弱点伤害时，每点伤害增加的疲劳值的乘算倍率。",
+                        "4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。"
+                )
                 .defineInRange("satiatedShieldWeaknessDamageMultiplier", 2.0, 1.0, Double.MAX_VALUE);
 
         SPEC = builder.build();

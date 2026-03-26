@@ -14,7 +14,7 @@ import static com.shrhang.kaleidoscope_cookery_satiated_shield_tuner.content.con
 
 public class SatiatedShieldEventMixinUtils {
     public static boolean isWeakenSatiatedShield() {
-        if (!IS_WEAKEN_SATIATED_SHIELD.get() || !GeneralConfig.SATIATED_SHIELD_ABSORB_ENABLED.get()) {
+        if (!IS_MODIFY_SATIATED_SHIELD.get() || !GeneralConfig.SATIATED_SHIELD_ABSORB_ENABLED.get()) {
             return false;
         }
         if (LoadingModList.get().getModFileById("kealeidoscope_compat") != null) {
@@ -36,12 +36,12 @@ public class SatiatedShieldEventMixinUtils {
             reducedDamage = (float) (SATIATED_SHIELD_MAX_DAMAGE_REDUCTION.get() * 1f);
         }
         float newDamage = originalDamage - reducedDamage;
-        if (originalDamage > SATIATED_SHIELD_MIN_DAMAGE_REDUCTION.get()) {
-            newDamage = (float) Math.max(newDamage, SATIATED_SHIELD_MIN_DAMAGE_REDUCTION.get());
+        if (originalDamage > SATIATED_SHIELD_MIN_DAMAGE.get()) {
+            newDamage = (float) Math.max(newDamage, SATIATED_SHIELD_MIN_DAMAGE.get());
             reducedDamage = originalDamage - newDamage;
         }
 
-        int exhaustionAmount = Math.round(reducedDamage) * 2;
+        int exhaustionAmount = Math.toIntExact(Math.round(reducedDamage * SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE.get()));
 
         if (source.is(TagMod.SATIATED_SHIELD_WEAKNESS)) {
             exhaustionAmount *= SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER.get();
