@@ -18,7 +18,7 @@ public class SatiatedShieldEventMixin {
         if (!SatiatedShieldEventMixinUtils.isWeakenSatiatedShield()) return;
         DamageSource source = event.getSource();
         if (event.getEntity() instanceof Player player && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
-            if (SatiatedShieldEventMixinUtils.isSatiatedShieldApply(player)) return;
+            if (!SatiatedShieldEventMixinUtils.isSatiatedShieldApply(player)) return;
             float originalDamage = event.getNewDamage();
             float finalDamage = SatiatedShieldEventMixinUtils.calculateFinalDamage(player, source, originalDamage);
             event.setNewDamage(finalDamage);
