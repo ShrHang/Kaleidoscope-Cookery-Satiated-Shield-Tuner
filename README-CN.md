@@ -1,6 +1,7 @@
 # 森罗物语：厨房——饱腹代偿调整器
 
 [![EN](https://img.shields.io/badge/English-EN-blue)](README.md)
+[![CurseForge](https://img.shields.io/curseforge/dt/1496142?logo=curseforge&label=CurseForge)](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery-satiated-shield-tuner)
 
 ## 概述
 

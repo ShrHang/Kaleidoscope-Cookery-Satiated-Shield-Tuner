@@ -1,6 +1,7 @@
 # Kaleidoscope Cookery: Satiated Shield Tuner
 
 [![CN](https://img.shields.io/badge/简体中文-CN-red)](README-CN.md)
+[![CurseForge](https://img.shields.io/curseforge/dt/1496142?logo=curseforge&label=CurseForge)](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery-satiated-shield-tuner)
 
 ## Overview
 
