@@ -35,10 +35,10 @@ public class SatiatedShieldEventMixinUtils {
         if (reducedDamage > SATIATED_SHIELD_MAX_DAMAGE_REDUCTION.get()) {
             reducedDamage = (float) (SATIATED_SHIELD_MAX_DAMAGE_REDUCTION.get() * 1f);
         }
-        float newDamage = originalDamage - reducedDamage;
+        float finalDamage = originalDamage - reducedDamage;
         if (originalDamage > SATIATED_SHIELD_MIN_DAMAGE.get()) {
-            newDamage = (float) Math.max(newDamage, SATIATED_SHIELD_MIN_DAMAGE.get());
-            reducedDamage = originalDamage - newDamage;
+            finalDamage = (float) Math.max(finalDamage, SATIATED_SHIELD_MIN_DAMAGE.get());
+            reducedDamage = originalDamage - finalDamage;
         }
 
         int exhaustionAmount = Math.toIntExact(Math.round(reducedDamage * SATIATED_SHIELD_ADDITIONAL_EXHAUSTION_PER_DAMAGE.get()));
@@ -47,18 +47,18 @@ public class SatiatedShieldEventMixinUtils {
             exhaustionAmount *= SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER.get();
         }
 
+        if (!SATIATED_SHIELD_ABSORB_EXCESS_DAMAGE.get()) {
+            float absorbedDamage = (float) (player.getFoodData().getFoodLevel() * 4 /  SATIATED_SHIELD_DAMAGE_REDUCTION_PERCENT.get());
+            if (source.is(TagMod.SATIATED_SHIELD_WEAKNESS)) {
+                absorbedDamage /= SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER.get();
+            }
+            finalDamage += Math.max(0, reducedDamage - absorbedDamage);
+        }
+
         float exhaustion = Math.max(0, exhaustionAmount);
         player.causeFoodExhaustion(exhaustion);
 
-        if (SATIATED_SHIELD_ABSORB_EXCESS_DAMAGE.get()) {
-            return newDamage;
-        } else {
-            float sufferedDamage = player.getFoodData().getFoodLevel() * 2;
-            if (source.is(TagMod.SATIATED_SHIELD_WEAKNESS)) {
-                sufferedDamage /= SATIATED_SHIELD_WEAKNESS_DAMAGE_MULTIPLIER.get();
-            }
-            return newDamage + Math.max(0, reducedDamage - sufferedDamage);
-        }
+        return finalDamage;
     }
 
 }
