@@ -2,6 +2,7 @@
 
 [![EN](https://img.shields.io/badge/English-EN-blue)](README.md)
 [![CurseForge](https://img.shields.io/curseforge/dt/1496142?logo=curseforge&label=CurseForge)](https://www.curseforge.com/minecraft/mc-mods/kaleidoscope-cookery-satiated-shield-tuner)
+[![MCMOD](https://img.shields.io/badge/MC百科-MCMOD-lime)](https://www.mcmod.cn/class/25807.html)
 
 ## 概述
 

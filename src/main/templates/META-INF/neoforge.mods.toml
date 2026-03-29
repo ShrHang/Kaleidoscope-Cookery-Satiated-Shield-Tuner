@@ -34,7 +34,7 @@ ordering = "NONE"
 side = "SERVER"
 
 [[dependencies."${mod_id}"]]
-modId = "kaleidoscope_cookery"
+modId = "kaleidoscope_compat"
 type = "optional"
 versionRange = "[2.4.0-neoforge+mc1.21.1,)"
 ordering = "NONE"
