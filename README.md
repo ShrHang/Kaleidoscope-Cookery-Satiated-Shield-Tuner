@@ -11,7 +11,7 @@ Satiated Shield is an effect in Kaleidoscope Cookery, it is cheap to obtain but 
 
 This mod provides several configurable options for the Satiated Shield effect, allowing players to adjust its intensity according to their needs and preferences.
 
-After installing this mod and running the game, you can adjust these options in-game if you install this mod on the client side, or in the
+After installing this mod and running the game, you can adjust these options in-game if you install this mod on the client side, you can also edit them in the
 `kaleidoscope_cookery_satiated_shield_tuner-server.toml`
 file under the `config` folder to achieve a more suitable gaming experience.
 
