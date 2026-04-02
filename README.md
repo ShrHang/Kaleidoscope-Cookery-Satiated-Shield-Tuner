@@ -15,7 +15,7 @@ After installing this mod and running the game, you can adjust these options in-
 `kaleidoscope_cookery_satiated_shield_tuner-server.toml`
 file under the `config` folder to achieve a more suitable gaming experience.
 
-[ConfigUI](image/ConfigUI.png)
+![ConfigUI](image/ConfigUI.png)
 
 ## Environment
 
