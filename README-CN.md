@@ -11,9 +11,11 @@
 
 本模组为饱腹代偿效果提供了数个可配置项，允许玩家根据自己的需求和喜好调整其效果强度。
 
-在安装本模组并运行游戏后，可以在 `config` 文件夹下的
+在安装本模组并运行游戏后，你可以在游戏中调整这些配置（前提是你在客户端也安装了本模组），或者在 `config` 文件夹下的
 `kaleidoscope_cookery_satiated_shield_tuner-server.toml`
 文件中来调整这些选项，以达到更适合自己的游戏体验。
+
+[ConfigUI](image/ConfigUI.png)
 
 ## 运行环境
 

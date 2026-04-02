@@ -7,13 +7,15 @@
 
 ## Overview
 
-Satiated Shield is a effect in Kaleidoscope Cookery, it is cheap to obtain but has powerful effects, which makes players who care about game balance very frustrated.
+Satiated Shield is an effect in Kaleidoscope Cookery, it is cheap to obtain but has powerful effects, which makes players who care about game balance very frustrated.
 
 This mod provides several configurable options for the Satiated Shield effect, allowing players to adjust its intensity according to their needs and preferences.
 
-After installing this mod and running the game, you can adjust these options in the
+After installing this mod and running the game, you can adjust these options in-game if you install this mod on the client side, or in the
 `kaleidoscope_cookery_satiated_shield_tuner-server.toml`
 file under the `config` folder to achieve a more suitable gaming experience.
+
+[ConfigUI](image/ConfigUI.png)
 
 ## Environment
 
@@ -25,7 +27,7 @@ Only need to install this mod on the server side.
   - Whether to enable the Satiated Shield tuner.
   - If the Satiated Shield Weakness from the Kaleidoscope Compat mod is enabled, its effects will take precedence. And the configuration options of this mod will be disabled.
 - IS_SATIATED_SHIELD_DISABLE_WHEN_HUNGRY_EFFECT
-  - Whether to disable the Satiated Shield effect when the player has hungry effect.
+  - Whether to disable the Satiated Shield effect when the player has the Hungry effect.
   - If true, the Satiated Shield effect will not apply while the player has the Hunger effect.
 - SATIATED_SHIELD_MIN_FOOD_LEVEL
   - The minimum Hunger Value required for the Satiated Shield effect to take effect.
