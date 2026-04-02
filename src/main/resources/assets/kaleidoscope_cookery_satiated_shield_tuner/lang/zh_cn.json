@@ -1,0 +1,18 @@
+{
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.is_modify_satiated_shield": "饱腹代偿效果调整",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.is_modify_satiated_shield.tooltip": "是否启用饱腹代偿效果调整。\n如果《森罗物语：兼容》的饱腹代偿效果削弱被启用，则优先使用它的削弱效果。且本模组的配置项无效。",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.is_satiated_shield_disable_when_hungry_effect": "存在饥饿效果时禁用饱腹代偿",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.is_satiated_shield_disable_when_hungry_effect.tooltip": "当为 true 时，玩家存在饥饿状态效果时饱腹代偿效果不生效。",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_min_food_level": "饱腹代偿最小饥饿值",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_min_food_level.tooltip": "饱腹代偿生效所需的最小饥饿值（整数）。\n当玩家饥饿值低于该值时，饱腹代偿不生效。",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_additional_exhaustion_per_damage": "饱腹代偿受伤害额外疲劳值",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_additional_exhaustion_per_damage.tooltip": "每次受到伤害时增加的疲劳值。\n4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。\n例如：如果设置为 0.5，每点被减免的伤害将额外造成 0.5 点疲劳值。",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_damage_reduction_percent": "饱腹代偿伤害减免百分比",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_damage_reduction_percent.tooltip": "饱腹代偿效果的<伤害减免百分比>。\n玩家受到的<原始伤害>将乘以<伤害减免百分比>来计算<伤害减免量>。\n例如：如果设置为 0.85，玩家将受到 15% 的原始伤害。",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_max_damage_reduction": "饱腹代偿最大伤害减免量",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_max_damage_reduction.tooltip": "饱腹代偿效果的<最大伤害减免量>。\n<伤害减免量>大于该值时，将被限制为该值。\n例如：如果设置为 10.0，玩家受到的伤害将被限制为最多减少 10 点伤害。",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_min_damage": "饱腹代偿最小承受伤害",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_min_damage.tooltip": "饱腹代偿效果下可造成的最小伤害。\n<原始伤害>高于该值时，<最终伤害>将被限制为不低于该值。\n<最终伤害> = <原始伤害> - <伤害减免量>",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_weakness_damage_multiplier": "饱腹代偿弱点伤害疲劳倍率",
+  "kaleidoscope_cookery_satiated_shield_tuner.configgui.satiated_shield_weakness_damage_multiplier.tooltip": "当玩家受到饱腹代偿弱点伤害时，每点伤害增加的疲劳值的乘算倍率。\n4点疲劳值 = 1点饱食度/饥饿值，在 1 游戏刻中玩家最多积累 40 点疲劳值。"
+}
