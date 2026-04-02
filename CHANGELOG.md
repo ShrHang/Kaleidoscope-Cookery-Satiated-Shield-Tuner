@@ -1,5 +1,8 @@
 # ChangeLog
 
+## 1.1.0 26-04-02
+- Added a configuration UI that allows users to easily modify the mod's configuration options in-game.
+
 ## 1.0.2 26-03-29
 - Fixed the wrong mod version in neoforged.mod.toml.
 
