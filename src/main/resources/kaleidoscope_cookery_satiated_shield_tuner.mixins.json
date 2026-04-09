@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.shrhang.kaleidoscope_cookery_satiated_shield_tuner.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "kaleidoscope_cookery_satiated_shield_tuner.refmap.json",
+  "mixins": [
+    "kaleidoscope_cookery.event.effect.SatiatedShieldEventMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
