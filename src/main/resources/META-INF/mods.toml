@@ -22,3 +22,17 @@ mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "kaleidoscope_cookery"
+type = "required"
+versionRange = "[1.2.0-forge+mc1.21.1,)"
+ordering = "NONE"
+side = "SERVER"
+
+[[dependencies."${mod_id}"]]
+modId = "kaleidoscope_compat"
+type = "optional"
+versionRange = "[2.4.0-forge+mc1.21.1,)"
+ordering = "NONE"
+side = "SERVER"
