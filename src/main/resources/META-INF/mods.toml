@@ -25,14 +25,14 @@ side = "BOTH"
 
 [[dependencies."${mod_id}"]]
 modId = "kaleidoscope_cookery"
-type = "required"
-versionRange = "[1.2.0-forge+mc1.21.1,)"
+mandatory = true
+versionRange = "[1.1.0-forge+mc1.20.1,1.2.1-forge+mc1.20.1]"
 ordering = "NONE"
 side = "SERVER"
 
 [[dependencies."${mod_id}"]]
 modId = "kaleidoscope_compat"
-type = "optional"
-versionRange = "[2.4.0-forge+mc1.21.1,)"
+mandatory = false
+versionRange = "[2.4.0-forge+mc1.20.1,)"
 ordering = "NONE"
 side = "SERVER"
