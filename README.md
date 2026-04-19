@@ -5,6 +5,10 @@
 [![Modrinth](https://img.shields.io/modrinth/dt/dj8HLXRh?logo=modrinth&label=Modrinth)](https://modrinth.com/mod/kaleidoscope-cookery-satiated-shield-tuner)
 [![MCMOD](https://img.shields.io/badge/MC百科-MCMOD-lime)](https://www.mcmod.cn/class/25807.html)
 
+## Notice
+
+This mod only works with Kaleidoscope Cookery from 1.1.0 to 1.2.1 version, as later versions of Kaleidoscope Cookery have integrated this mod's features.
+
 ## Overview
 
 Satiated Shield is an effect in Kaleidoscope Cookery, it is cheap to obtain but has powerful effects, which makes players who care about game balance very frustrated.

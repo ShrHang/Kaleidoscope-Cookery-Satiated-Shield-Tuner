@@ -1,5 +1,8 @@
 # ChangeLog
 
+## neoforge 1.1.1 26-4-20
+- Added the supported version of Kaleidoscope Cookery from 1.1.0 to 1.2.1.
+
 ## 1.1.0 26-04-02
 - Added a configuration UI that allows users to easily modify the mod's configuration options in-game.
 

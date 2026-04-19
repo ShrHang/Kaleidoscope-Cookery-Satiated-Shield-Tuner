@@ -13,7 +13,7 @@ repositories {
 }
 
 base {
-    archivesName = "Kaleidoscope-Cookery-Satiated-Shield-Tuner"
+    archivesName = "Kaleidoscope-Cookery-Satiated-Shield-Tuner-${minecraft_version}"
 }
 
 java {
