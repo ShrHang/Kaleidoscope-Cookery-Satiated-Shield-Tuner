@@ -1,6 +1,6 @@
 # ChangeLog
 
-## forge 1.0.2 26-4-11
+## forge 1.0.2 26-4-20
 - Added the supported version of Kaleidoscope Cookery from 1.1.0 to 1.2.1.
 
 ## forge 1.0.1 26-4-10

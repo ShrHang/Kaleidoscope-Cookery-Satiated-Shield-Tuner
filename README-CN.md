@@ -5,6 +5,10 @@
 [![Modrinth](https://img.shields.io/modrinth/dt/dj8HLXRh?logo=modrinth&label=Modrinth)](https://modrinth.com/mod/kaleidoscope-cookery-satiated-shield-tuner)
 [![MCMOD](https://img.shields.io/badge/MC百科-MCMOD-lime)](https://www.mcmod.cn/class/25807.html)
 
+## 须知
+
+本模组仅适用于《森罗物语：厨房》1.1.0至1.2.1版本，后续版本的《森罗物语：厨房》已包含本模组的功能。
+
 ## 概述
 
 饱腹代偿是模组《森罗物语：厨房》中的一个状态效果，它来源廉价却效果强力，以至于让注重游戏平衡性的玩家极为头疼。
